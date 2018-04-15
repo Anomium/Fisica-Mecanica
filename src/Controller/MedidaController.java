@@ -10,7 +10,6 @@ public class MedidaController {
     Medida med = new Medida();
 
     public static String convertir(double val) {
-        JOptionPane.showConfirmDialog(null, val);
         Locale.setDefault(Locale.US);
         DecimalFormat num = new DecimalFormat("#,###.00000");
         return num.format(val);

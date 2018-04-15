@@ -1130,6 +1130,158 @@ public class View extends javax.swing.JFrame {
                 txtSalida.setText(txtEntrada.getText());
                 
             }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Atmosfera")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Atmosfera")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Bar")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.01325)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra por pulgada cuadrada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 14.6959)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("pascal")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 101325)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("tor")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 760)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Bar")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Atmosfera")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.986923)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Bar")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra por pulgada cuadrada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 14.5038)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("pascal")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 100000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("tor")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 750.062)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Libra por pulgada cuadrada")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Atmosfera")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.068046)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Bar")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0689476)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra por pulgada cuadrada")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("pascal")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 6894.76)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("tor")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 51.7149)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Pascal")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Atmosfera")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 9.8692e-6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Bar")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e-5)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra por pulgada cuadrada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000145038)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("pascal")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("tor")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.00750062)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Tor")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Atmosfera")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.00131579)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Bar")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.00133322)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra por pulgada cuadrada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0193368)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("pascal")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 133.322)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("tor")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Grados Celsius")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Grados Celsius")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Grados Fahrenheit")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 33.8)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kelvin")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 274.15)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Grados Fahrenheit")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Grados Celsius")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * -17.2222)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Grados Fahrenheit")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kelvin")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 255.928)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Grados Celsius")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Grados Celsius")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * -272.15)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Grados Fahrenheit")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * -457.87)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kelvin")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            }
         }
 
     }
