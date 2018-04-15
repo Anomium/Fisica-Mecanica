@@ -1602,6 +1602,348 @@ public class View extends javax.swing.JFrame {
                 txtSalida.setText(txtEntrada.getText());
                 
             }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Segundo")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Segundo")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Minuto")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0166667)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000277778)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Dia")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.1574e-5)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Semana")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.6534e-6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Mes")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.8052e-7)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Año")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.171e-8)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Decada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.171e-9)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Siglo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.171e-10)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Minuto")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Segundo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 60)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Minuto")) {
+                
+                txtSalida.setText(txtEntrada.getText());;
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0166667)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Dia")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000694444)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Semana")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 9.9206e-5)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Mes")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.2831e-5)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Año")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.9026e-6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Decada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.9026e-7)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Siglo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.9026e-8)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Hora")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Segundo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3600)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Minuto")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 60)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Hora")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Dia")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0416667)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Semana")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.00595238)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Mes")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.00136986)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Año")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000114155)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Decada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.1416e-5)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Siglo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.1416e-6)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Dia")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Segundo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 86400)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Minuto")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1440)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 24)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Dia")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Semana")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.142857)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Mes")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0328767)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Año")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.00273973)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Decada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000273973)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Siglo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.7397e-5)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Semana")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Segundo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 604800)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Minuto")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 10080)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 168)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Dia")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 7)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Semana")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Mes")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.230137)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Año")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0191781)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Decada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.00191781)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Siglo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000191781)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Mes")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Segundo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.628e+6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Minuto")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 43800)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 730.001)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Dia")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 30.4167)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Semana")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 4.34524)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Mes")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Año")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0833334)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Decada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.00833334)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Siglo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000833334)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Año")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Segundo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.154e+7)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Minuto")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 525600)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 8760)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Dia")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 365)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Semana")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 52.1429)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Mes")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 12)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Año")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Decada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.1)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Siglo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.01)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Decada")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Segundo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.154e+8)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Minuto")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 5.256e+6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 87600)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Dia")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3650)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Semana")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 521.429)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Mes")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 120)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Año")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 10)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Decada")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Siglo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.1)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Siglo")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Segundo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.154e+9)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Minuto")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 5.256e+7)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 876000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Dia")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 36500)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Semana")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 5214.29)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Mes")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1200)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Año")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 100)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Decada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 10)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Siglo")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            }
         }
 
     }
