@@ -841,7 +841,225 @@ public class View extends javax.swing.JFrame {
                 txtSalida.setText(txtEntrada.getText());
                 
             }             
-        }              
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Tonelada")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Tonelada")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilogramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e+6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Miligramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e+9)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Microgramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e+12)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2204.62)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Onza")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 35274)));
+                
+            }
+            
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Kilogramo")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Tonelada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilogramo")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Miligramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e+6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Microgramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e+9)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.20462)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Onza")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 35.274)));
+                
+            }
+            
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Gramo")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Tonelada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e-6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilogramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gramo")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Miligramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Microgramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e+6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.00220462)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Onza")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.035274)));
+                
+            }
+            
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Miligramo")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Tonelada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e-9)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilogramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e-6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Miligramo")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Microgramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.2046e-6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Onza")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.5274e-5)));
+                
+            }
+            
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Microgramo")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Tonelada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e-12)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilogramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e-9)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e-6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Miligramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Microgramo")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.2046e-9)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Onza")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.5274e-8)));
+                
+            }
+            
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Libra")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Tonelada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000453592)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilogramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.453592)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 453.592)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Miligramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 453592)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Microgramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 4.536e+8)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Onza")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 16)));
+                
+            }
+            
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Onza")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Tonelada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.835e-5)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilogramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0283495)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 28.3495)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Miligramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 28349.5)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Microgramo")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.835e+7)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Libra")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0625)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Onza")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            }
+            
+        }
+             
 
     }
     
