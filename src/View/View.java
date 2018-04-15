@@ -270,7 +270,7 @@ public class View extends javax.swing.JFrame {
             cmbx_Dunidad.addItem("MegaHercio");
             cmbx_Dunidad.addItem("Gigahercio");
 
-            cmbx_Dunidad.addItem("Hercio");
+            cmbx_Aunidad.addItem("Hercio");
             cmbx_Aunidad.addItem("Kilohertz");
             cmbx_Aunidad.addItem("MegaHercio");
             cmbx_Aunidad.addItem("Gigahercio");
@@ -1058,8 +1058,79 @@ public class View extends javax.swing.JFrame {
                 
             }
             
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Hercio")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Hercio")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilohertz")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Megahercio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e-6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gigahercio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e-9)));
+                
+            } 
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Kilohertz")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Hercio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilohertz")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Megahercio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gigahercio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e-6)));
+                
+            } 
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Megahercio")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Hercio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e+6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilohertz")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Megahercio")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gigahercio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+                
+            } 
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Gigahercio")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Hercio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e+9)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilohertz")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1e+6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Megahercio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gigahercio")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            }
         }
-             
 
     }
     
