@@ -7,11 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 import java.time.LocalDateTime;
+import javax.swing.JComboBox;
 import javax.swing.Timer;
+import Controller.MedidaController;
 
 public class View extends javax.swing.JFrame {
     
+    private MedidaController medco = new MedidaController();
     private int x,y;
+    
     public View() {
         initComponents();
         Shape forma = new RoundRectangle2D.Double(0,0,this.getBounds().width,this.getBounds().height,15,15);
@@ -35,12 +39,13 @@ public class View extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        txt_Entrada = new javax.swing.JTextField();
+        txtEntrada = new javax.swing.JTextField();
         cmbx_Dunidad = new javax.swing.JComboBox<>();
         cmbx_Aunidad = new javax.swing.JComboBox<>();
-        txt_Salida = new javax.swing.JLabel();
+        txtSalida = new javax.swing.JLabel();
         jLabel = new javax.swing.JLabel();
         cmbx_Unidad = new javax.swing.JComboBox<>();
+        btnCalcular = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -52,28 +57,18 @@ public class View extends javax.swing.JFrame {
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel1MouseClicked(evt);
-            }
-        });
 
-        txt_Entrada.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        txtEntrada.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
 
         cmbx_Dunidad.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
 
         cmbx_Aunidad.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
 
-        txt_Salida.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        txt_Salida.setText("0.0");
+        txtSalida.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        txtSalida.setText("0.0");
 
         jLabel.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
         jLabel.setText("=");
-        jLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelMouseClicked(evt);
-            }
-        });
 
         cmbx_Unidad.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         cmbx_Unidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Energia", "Frecuencia", "Longitud", "Masa", "Presion", "Temperatura", "Tiempo", "Velocidad" }));
@@ -83,42 +78,61 @@ public class View extends javax.swing.JFrame {
             }
         });
 
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cmbx_Unidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCalcular)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cmbx_Unidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(cmbx_Dunidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_Entrada, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtEntrada, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cmbx_Aunidad, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(124, 124, 124))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(cmbx_Aunidad, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(111, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtSalida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addGap(28, 28, 28)
                 .addComponent(cmbx_Unidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txt_Entrada)
-                        .addComponent(txt_Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtEntrada)
+                        .addComponent(txtSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cmbx_Dunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbx_Aunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(btnCalcular)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 51, 51));
@@ -138,6 +152,17 @@ public class View extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(255, 51, 51));
 
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/if_cancel_49826 (1).png"))); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel2.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -155,22 +180,6 @@ public class View extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(0, 0, 0))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2))
-        );
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -180,12 +189,16 @@ public class View extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(319, 319, 319)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
@@ -207,7 +220,7 @@ public class View extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,10 +236,6 @@ public class View extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMouseClicked
-
-    }//GEN-LAST:event_jLabelMouseClicked
 
     private void cmbx_UnidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbx_UnidadActionPerformed
         if (cmbx_Unidad.getSelectedItem().toString().equalsIgnoreCase("Energia")) {
@@ -281,7 +290,6 @@ public class View extends javax.swing.JFrame {
             cmbx_Dunidad.addItem("Centimetro");
             cmbx_Dunidad.addItem("Milimetro");
             cmbx_Dunidad.addItem("Micrometro");
-            cmbx_Dunidad.addItem("Nanometro");
             cmbx_Dunidad.addItem("Milla");
             cmbx_Dunidad.addItem("Yarda");
             cmbx_Dunidad.addItem("Pie");
@@ -293,7 +301,6 @@ public class View extends javax.swing.JFrame {
             cmbx_Aunidad.addItem("Centimetro");
             cmbx_Aunidad.addItem("Milimetro");
             cmbx_Aunidad.addItem("Micrometro");
-            cmbx_Aunidad.addItem("Nanometro");
             cmbx_Aunidad.addItem("Milla");
             cmbx_Aunidad.addItem("Yarda");
             cmbx_Aunidad.addItem("Pie");
@@ -407,10 +414,6 @@ public class View extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cmbx_UnidadActionPerformed
 
-    private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
-
-    }//GEN-LAST:event_jPanel1MouseClicked
-
     private void jLabel2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel2AncestorAdded
 
     }//GEN-LAST:event_jLabel2AncestorAdded
@@ -428,6 +431,296 @@ public class View extends javax.swing.JFrame {
         this.setLocation(this.getLocation().x + evt.getX() - x, this.getLocation().y + evt.getY() - y);
     }//GEN-LAST:event_jPanel2MouseDragged
 
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        ValUnidad(cmbx_Dunidad, cmbx_Aunidad);
+    }//GEN-LAST:event_btnCalcularActionPerformed
+    
+    public void ValUnidad(JComboBox de, JComboBox A){
+        if (de.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
+                txtSalida.setText(txtEntrada.getText());
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Metro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Centimetro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 100000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milimetro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micrometro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000000000)));
+
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 00.621371)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Yarda")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1093.61)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pie")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3280.84)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pulgada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 39370.1)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla nautica")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.539957)));
+                
+            } 
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Metro")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Metro")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Centimetro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 100)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milimetro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micrometro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000000)));
+
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000621371)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Yarda")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.09361)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pie")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.28084)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pulgada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 39.3701)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla nautica")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0005399570950324)));
+                
+            }              
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Centimetro")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 100000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Metro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.01)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Centimetro")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milimetro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 10)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micrometro")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 10000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000006213)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Yarda")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0109361)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pie")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.0328083)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pulgada")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.3936996)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla nautica")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000005399)));
+                
+            }             
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Milimetro")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Metro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Centimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micrometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Yarda")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pie")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pulgada")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla nautica")) {
+                
+            }             
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Micrometro")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Metro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Centimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micrometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Yarda")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pie")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pulgada")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla nautica")) {
+                
+            }             
+        }  else if (de.getSelectedItem().toString().equalsIgnoreCase("Milla")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Metro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Centimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micrometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Yarda")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pie")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pulgada")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla nautica")) {
+                
+            }             
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Yarda")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Metro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Centimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micrometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Yarda")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pie")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pulgada")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla nautica")) {
+                
+            }             
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Pie")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Metro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Centimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micrometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Yarda")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pie")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pulgada")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla nautica")) {
+                
+            }             
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Pulgada")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Metro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Centimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micrometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Yarda")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pie")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pulgada")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla nautica")) {
+                
+            }             
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Milla nautica")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Metro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Centimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milimetro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micrometro")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Yarda")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pie")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Pulgada")) {
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milla nautica")) {
+                
+            }             
+        }              
+
+    }
+    
+    public void Conversion(JComboBox de, JComboBox A){
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -465,6 +758,7 @@ public class View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalcular;
     private javax.swing.JComboBox<String> cmbx_Aunidad;
     private javax.swing.JComboBox<String> cmbx_Dunidad;
     private javax.swing.JComboBox<String> cmbx_Unidad;
@@ -475,7 +769,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField txt_Entrada;
-    private javax.swing.JLabel txt_Salida;
+    private javax.swing.JTextField txtEntrada;
+    private javax.swing.JLabel txtSalida;
     // End of variables declaration//GEN-END:variables
 }
