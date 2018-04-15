@@ -2,8 +2,10 @@ package View;
 
 import com.sun.awt.AWTUtilities;
 import java.awt.Color;
+import java.awt.Shape;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.RoundRectangle2D;
 import java.time.LocalDateTime;
 import javax.swing.Timer;
 
@@ -12,9 +14,12 @@ public class View extends javax.swing.JFrame {
     private int x,y;
     public View() {
         initComponents();
+        Shape forma = new RoundRectangle2D.Double(0,0,this.getBounds().width,this.getBounds().height,15,15);
+        AWTUtilities.setWindowShape(this, forma);
         AWTUtilities.setWindowOpaque(this, false);
         jLabel1.setForeground(Color.white);
         setLocationRelativeTo(null);
+        
         new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -55,6 +60,10 @@ public class View extends javax.swing.JFrame {
 
         txt_Entrada.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
 
+        cmbx_Dunidad.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+
+        cmbx_Aunidad.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+
         txt_Salida.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         txt_Salida.setText("0.0");
 
@@ -66,6 +75,7 @@ public class View extends javax.swing.JFrame {
             }
         });
 
+        cmbx_Unidad.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         cmbx_Unidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Energia", "Frecuencia", "Longitud", "Masa", "Presion", "Temperatura", "Tiempo", "Velocidad" }));
         cmbx_Unidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
