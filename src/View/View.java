@@ -245,7 +245,7 @@ public class View extends javax.swing.JFrame {
             cmbx_Aunidad.removeAllItems();
 
             cmbx_Dunidad.addItem("Julio");
-            cmbx_Dunidad.addItem("Kilojule");
+            cmbx_Dunidad.addItem("Kilojoule");
             cmbx_Dunidad.addItem("Gram Calorie");
             cmbx_Dunidad.addItem("Kilocaloria");
             cmbx_Dunidad.addItem("Vatio-hora");
@@ -253,7 +253,7 @@ public class View extends javax.swing.JFrame {
             cmbx_Dunidad.addItem("Electronvoltio");
 
             cmbx_Aunidad.addItem("Julio");
-            cmbx_Aunidad.addItem("Kilojule");
+            cmbx_Aunidad.addItem("Kilojoule");
             cmbx_Aunidad.addItem("Gram Calorie");
             cmbx_Aunidad.addItem("Kilocaloria");
             cmbx_Aunidad.addItem("Vatio-hora");
@@ -1388,6 +1388,216 @@ public class View extends javax.swing.JFrame {
                 txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.852)));
                 
             } else if (A.getSelectedItem().toString().equalsIgnoreCase("Nudo")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Julio")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Julio")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                    
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilojoule")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gram Calorie")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.239006)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilocaloria")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000239006)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Vatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000277778)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilovatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.7778e-7)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Electronvoltio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 6.242e+18)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Kilojoule")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Julio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                    
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilojoule")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gram Calorie")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 239.006)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilocaloria")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.239006)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Vatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.277778)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilovatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000277778)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Electronvoltio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 6.242e+21)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Gram Calorie")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Julio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 4.184)));
+                    
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilojoule")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.004184)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gram Calorie")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilocaloria")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Vatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.00116222)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilovatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.1622e-6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Electronvoltio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.611e+19)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Kilocaloria")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Julio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 4184)));
+                    
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilojoule")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 4.184)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gram Calorie")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilocaloria")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Vatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.16222)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilovatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.00116222)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Electronvoltio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.611e+22)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Vatio-hora")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Julio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3600)));
+                    
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilojoule")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.6)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gram Calorie")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 860.421)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilocaloria")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.860421)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Vatio-hora")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilovatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Electronvoltio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.247e+22)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Kilovatio-hora")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Julio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.6e+6)));
+                    
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilojoule")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3600)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gram Calorie")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 860421)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilocaloria")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 860.421)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Vatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilovatio-hora")) {
+                
+                txtSalida.setText(txtEntrada.getText());
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Electronvoltio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 2.247e+25)));
+                
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Electronvoltio")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Julio")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.6022e-19)));
+                    
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilojoule")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1.6022e-22)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Gram Calorie")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.8293e-20)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilocaloria")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 3.8293e-23)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Vatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 4.4505e-23)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilovatio-hora")) {
+                
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 4.4505e-26)));
+                
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Electronvoltio")) {
                 
                 txtSalida.setText(txtEntrada.getText());
                 
