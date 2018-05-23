@@ -71,7 +71,7 @@ public class View extends javax.swing.JFrame {
         jLabel.setText("=");
 
         cmbx_Unidad.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        cmbx_Unidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Energia", "Frecuencia", "Longitud", "Masa", "Presion", "Temperatura", "Tiempo", "Velocidad" }));
+        cmbx_Unidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Energia", "Frecuencia", "Fuerza", "Longitud", "Masa", "Presion", "Temperatura", "Tiempo", "Velocidad" }));
         cmbx_Unidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbx_UnidadActionPerformed(evt);
@@ -109,7 +109,7 @@ public class View extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtSalida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap())))))
+                                .addContainerGap(158, Short.MAX_VALUE))))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCalcular)
@@ -392,6 +392,25 @@ public class View extends javax.swing.JFrame {
             cmbx_Aunidad.addItem("Metro por segundo");
             cmbx_Aunidad.addItem("Kilometro por hora");
             cmbx_Aunidad.addItem("Nudo");
+        } else if (cmbx_Unidad.getSelectedItem().toString().equalsIgnoreCase("Fuerza")) {
+            cmbx_Dunidad.removeAllItems();
+            cmbx_Aunidad.removeAllItems();
+            
+            cmbx_Dunidad.addItem("Nanonewton");
+            cmbx_Dunidad.addItem("Micronewton");
+            cmbx_Dunidad.addItem("Milinewton");
+            cmbx_Dunidad.addItem("Newton");
+            cmbx_Dunidad.addItem("Kilonewton");
+            cmbx_Dunidad.addItem("Meganewton");
+            cmbx_Dunidad.addItem("Giganewton");
+            
+            cmbx_Aunidad.addItem("Nanonewton");
+            cmbx_Aunidad.addItem("Micronewton");
+            cmbx_Aunidad.addItem("Milinewton");
+            cmbx_Aunidad.addItem("Newton");
+            cmbx_Aunidad.addItem("Kilonewton");
+            cmbx_Aunidad.addItem("Meganewton");
+            cmbx_Aunidad.addItem("Giganewton");
         }
     }//GEN-LAST:event_cmbx_UnidadActionPerformed
 
@@ -1941,6 +1960,118 @@ public class View extends javax.swing.JFrame {
 
                 txtSalida.setText(txtEntrada.getText());
 
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Nanonewton")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Nanonewton")) {
+                txtSalida.setText(txtEntrada.getText());
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micronewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milinewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000001)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Newton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * Math.pow(10,-9))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * (10 * Math.pow(10,-13)))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Meganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * (10 * Math.pow(10,-16)))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Giganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * Math.pow(10,-18))));
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Micronewton")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Nanonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micronewton")) {
+                txtSalida.setText(txtEntrada.getText());
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milinewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Newton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000001)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * Math.pow(10,-9))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Meganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * (10 * Math.pow(10,-13)))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Giganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * (10 * Math.pow(10,-15)))));
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Milinewton")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Nanonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micronewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milinewton")) {
+                txtSalida.setText(txtEntrada.getText());
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Newton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000001)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Meganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * (10 * Math.pow(10,-10)))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Giganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * (10 * Math.pow(10,-13)))));
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Newton")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Nanonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000000000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micronewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milinewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Newton")) {
+                txtSalida.setText(txtEntrada.getText());
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Meganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000001)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Giganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * Math.pow(10,-9))));
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Kilonewton")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Nanonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * Math.pow(10,12))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micronewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000000000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milinewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Newton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilonewton")) {
+                txtSalida.setText(txtEntrada.getText());
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Meganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Giganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.000001)));
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Meganewton")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Nanonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * Math.pow(10,15))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micronewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * Math.pow(10,12))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milinewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000000000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Newton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Meganewton")) {
+                txtSalida.setText(txtEntrada.getText());
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Giganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 0.001)));
+            }
+        } else if (de.getSelectedItem().toString().equalsIgnoreCase("Giganewton")) {
+            if (A.getSelectedItem().toString().equalsIgnoreCase("Nanonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * Math.pow(10,18))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Micronewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * Math.pow(10,15))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Milinewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * (10 * Math.pow(10,11)))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Newton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * (10 * Math.pow(10,8)))));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Kilonewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Meganewton")) {
+                txtSalida.setText(String.valueOf(medco.convertir(Double.parseDouble(txtEntrada.getText()) * 1000)));
+            } else if (A.getSelectedItem().toString().equalsIgnoreCase("Giganewton")) {
+                txtSalida.setText(txtEntrada.getText());
             }
         }
 
