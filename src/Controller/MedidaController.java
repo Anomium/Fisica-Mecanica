@@ -14,4 +14,11 @@ public class MedidaController {
         DecimalFormat num = new DecimalFormat("#,###.00000");
         return num.format(val);
     }
+    
+    
+    /*public static double convertir(double val) {
+        double num = val;
+        System.out.println(num);
+        return num;
+    }*/
 }
