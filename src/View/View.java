@@ -46,6 +46,7 @@ public class View extends javax.swing.JFrame {
         jLabel = new javax.swing.JLabel();
         cmbx_Unidad = new javax.swing.JComboBox<>();
         btnCalcular = new javax.swing.JButton();
+        btn_SinNotacion = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -57,24 +58,18 @@ public class View extends javax.swing.JFrame {
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtEntrada.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
-        jPanel1.add(txtEntrada, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 87, 180, 66));
 
         cmbx_Dunidad.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        jPanel1.add(cmbx_Dunidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 171, 180, -1));
 
         cmbx_Aunidad.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        jPanel1.add(cmbx_Aunidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 171, 168, -1));
 
         txtSalida.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         txtSalida.setText("0.0");
-        jPanel1.add(txtSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(244, 87, 183, 66));
 
         jLabel.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
         jLabel.setText("=");
-        jPanel1.add(jLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(204, 87, -1, -1));
 
         cmbx_Unidad.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         cmbx_Unidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Energia", "Frecuencia", "Fuerza", "Longitud", "Masa", "Presion", "Temperatura", "Tiempo", "Velocidad" }));
@@ -83,7 +78,6 @@ public class View extends javax.swing.JFrame {
                 cmbx_UnidadActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbx_Unidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 28, 561, -1));
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +85,65 @@ public class View extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 236, -1, -1));
+
+        btn_SinNotacion.setText("Sin notacion cientifica");
+        btn_SinNotacion.setEnabled(false);
+        btn_SinNotacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SinNotacionActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(cmbx_Unidad, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(txtEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel)
+                        .addGap(12, 12, 12)
+                        .addComponent(txtSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(cmbx_Dunidad, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(114, 114, 114)
+                        .addComponent(cmbx_Aunidad, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(256, 256, 256)
+                        .addComponent(btnCalcular)
+                        .addGap(51, 51, 51)
+                        .addComponent(btn_SinNotacion)))
+                .addGap(21, 21, 21))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(cmbx_Unidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel)
+                    .addComponent(txtSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbx_Dunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbx_Aunidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCalcular)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(btn_SinNotacion)))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
 
         jPanel2.setBackground(new java.awt.Color(255, 51, 51));
         jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -187,7 +239,8 @@ public class View extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -382,6 +435,10 @@ public class View extends javax.swing.JFrame {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         try {
             ValUnidad(cmbx_Dunidad, cmbx_Aunidad);
+            if (Double.parseDouble(txtSalida.getText()) >= 1) {
+                btn_SinNotacion.setEnabled(true);
+            }
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Recuerde llevar toda la informacion.", "Error", 0);
         }
@@ -395,6 +452,11 @@ public class View extends javax.swing.JFrame {
         x = evt.getX();
         y = evt.getY();
     }//GEN-LAST:event_jPanel2MousePressed
+
+    private void btn_SinNotacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SinNotacionActionPerformed
+        medco.SinNotacion(Double.parseDouble(txtSalida.getText()));
+        btn_SinNotacion.setEnabled(false);
+    }//GEN-LAST:event_btn_SinNotacionActionPerformed
 
     public void ValUnidad(JComboBox de, JComboBox A) {
         if (de.getSelectedItem().toString().equalsIgnoreCase("Kilometro")) {
@@ -2076,6 +2138,7 @@ public class View extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btn_SinNotacion;
     private javax.swing.JComboBox<String> cmbx_Aunidad;
     private javax.swing.JComboBox<String> cmbx_Dunidad;
     private javax.swing.JComboBox<String> cmbx_Unidad;

@@ -9,16 +9,18 @@ public class MedidaController {
 
     Medida med = new Medida();
 
-    public static String convertir(double val) {
+    public static String SinNotacion(double val) {
         Locale.setDefault(Locale.US);
         DecimalFormat num = new DecimalFormat("#,###.00000");
+        JOptionPane.showMessageDialog(null, num.format(val));
         return num.format(val);
+        
     }
     
     
-    /*public static double convertir(double val) {
+    public static double convertir(double val) {
         double num = val;
         System.out.println(num);
         return num;
-    }*/
+    }
 }
